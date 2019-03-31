@@ -1,18 +1,36 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <UsersTable v-if="loggedIn" :users="users" />
+    <div v-if="!loggedIn" class="notLoggedIn">
+      <img src="../assets/logo.png" alt="">
+      <p>Log ind for at bruge hjemmesiden</p>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import UsersTable from "../components/UsersTable.vue";
+import { mapState } from "vuex";
 export default {
   name: "home",
   components: {
-    HelloWorld
+    UsersTable: UsersTable
+  },
+  data() {
+    return {
+      loggedIn: localStorage.user
+    }
+  },
+  created() {
+    this.$store.dispatch("fetchUsers");
+  },
+  computed: {
+    ...mapState(['users'])
   }
 };
 </script>
+<style>
+.notLoggedIn {
+  color: red;
+}
+</style>
