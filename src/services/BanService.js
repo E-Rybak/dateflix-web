@@ -2,7 +2,7 @@ import Axios from "axios";
 import { authHeader } from "./AuthHeader.js";
 
 const client = Axios.create({
-  baseURL: "http://localhost:5000/api/admin/",
+  baseURL: "http://dateflix.captainanderz.com/api/admin/",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",

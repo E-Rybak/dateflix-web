@@ -3,7 +3,7 @@ import { authHeader } from "./AuthHeader.js";
 
 // Instance of an Axios http client. Used to send requests to the API.
 const guestClient = Axios.create({
-  baseURL: "http://localhost:5000/api/users/",
+  baseURL: "http://dateflix.captainanderz.com/api/users/",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json"
@@ -11,7 +11,7 @@ const guestClient = Axios.create({
 });
 
 const client = Axios.create({
-  baseURL: "http://localhost:5000/api/users/",
+  baseURL: "http://dateflix.captainanderz.com/api/users/",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
