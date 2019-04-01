@@ -2,7 +2,6 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Bans from "./views/Bans.vue";
-import UserProfile from "./views/UserProfile.vue";
 import store from "./store";
 
 Vue.use(Router);
@@ -20,27 +19,6 @@ const router = new Router({
       path: "/bans",
       name: "bans",
       component: Bans
-    },
-    {
-      path: "/user/:id",
-      name: "user-show",
-      component: UserProfile,
-      props: true,
-      beforeEnter(routeTo, routeFrom, next) {
-        store
-          .dispatch("fetchUser", routeTo.params.id)
-          .then(response => {
-            routeTo.params.user = response.data;
-            next();
-          })
-          .catch(error => {
-            if (error.response && error.response.status == 404) {
-              next({ name: "404", params: { resource: "event" } });
-            } else {
-              next({ name: "network-issue" });
-            }
-          });
-      }
     }
   ]
 });

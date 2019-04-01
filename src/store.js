@@ -40,9 +40,6 @@ export default new Vuex.Store({
         .catch(error => {
           console.log(error.message);
         });
-    },
-    fetchUser(id) {
-      return UserService.getById(id);
     }
   }
 });

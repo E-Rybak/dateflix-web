@@ -1,6 +1,6 @@
 <template>
     <div id="Bans" class="container">
-        <BansTable v-if="loggedIn" :bans="bans" />
+        <BansTable :bans="bans" />
         <b-button block v-b-modal.create-ban-modal variant="danger">Opret ny bandlysning</b-button>
         <hr>
         <b-modal id="create-ban-modal" title="Opret bandlysning formel">
@@ -36,7 +36,6 @@ export default {
     name: "Bans",
     data() {
         return {
-            loggedIn: localStorage.user,
             email: ""
         }
     },

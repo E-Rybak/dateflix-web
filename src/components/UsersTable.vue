@@ -87,9 +87,6 @@ export default {
         rows() {
             return this.filteredList.length
         }
-    },
-    created() {
-        console.log(this.users)
     }
 }
 </script>

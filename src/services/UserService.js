@@ -39,10 +39,5 @@ export default {
         localStorage.user = JSON.stringify(response.data); // Add the user object to localStorage. This object also contains the JSON Web Token used for authenticated requests.
       }
     });
-  },
-
-  // Authenticated. Returns a user by their ID
-  getById(id) {
-    return client.get("/" + id);
   }
 };

@@ -193,9 +193,7 @@ export default {
       this.register_form.password = ''
     },
     registerAdminSubmit(){
-      console.log("test")
       if (this.register_form.email && this.register_form.password) {
-            console.log("Made it inside IF statement")
             let user = this.register_form
             userService.register(user).then(response => {
               this.$store.dispatch("fetchUsers")
@@ -220,11 +218,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #CCCECF;
-}
-body {
-  background-color: whitesmoke;
-}
-.container {
-    background: #343A40;
 }
 </style>
