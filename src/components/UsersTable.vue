@@ -26,7 +26,7 @@
         
         <template slot="show_details" slot-scope="row">
         <b-button size="sm" @click="row.toggleDetails" class="mr-2">
-          {{ row.detailsShowing ? 'Hide' : 'Show'}} Details
+          {{ row.detailsShowing ? 'Skjul' : 'Se'}} detaljer
         </b-button>
 
       </template>

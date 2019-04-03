@@ -41,19 +41,19 @@
 
       <b-form-group
       id="login-input-group-2"
-      label="Password:"
+      label="Kodeord:"
       label-for="login-password">
       <b-form-input
       v-model="login_form.password"
       id="login-password"
       type="password"
-      placeholder="Password"
+      placeholder="Kodeord"
       required>
       </b-form-input>
       </b-form-group>
 
       <b-button class="float-left" type="reset" variant="danger">Nulstil</b-button>
-      <b-button class="float-right" type="submit" variant="primary">Log ind</b-button>
+      <b-button class="float-right" type="submit" variant="success">Log ind</b-button>
 
       </b-form>
       <div slot="modal-footer"></div> <!-- This line removes the default footer buttons on modals -->
@@ -127,7 +127,9 @@
       </b-form-textarea>
       </b-form-group>
       
-      <b-form-select v-model="register_form.gender" :options="genderOptions" required></b-form-select>
+      <b-form-group id="register-input-group-6" label="Køn:" label-for="gender-select">
+      <b-form-select id="gender-select" v-model="register_form.gender" :options="genderOptions" required></b-form-select>
+      </b-form-group>
 
       <hr>
       <b-button class="float-right" variant="success" type="submit">Opret administrator</b-button>
